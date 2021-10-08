@@ -6,15 +6,12 @@ client.commands = new Discord.Collection();
 const mongoose = require('mongoose');
 
 // Connecting to database
- mongoose.connect('mongodb://yourusername:yourpassword@ds121825.mlab.com:11025/yourmongodb', {useNewUrlParser: true});
+mongoose.connect('mongodb://yourusername:yourpassword@ds121825.mlab.com:11025/yourmongodb', {useNewUrlParser: true});
     mongoose.connection.once('open', function(){
       console.log('Conection has been made!');
     }).on('error', function(error){
         console.log('Error is: ', error);
     });
-}).then(() => {
-	console.log('Connected to MongoDB Database')
-}).catch((error) => console.log(error))
 
 // Check for Javascript file in the command folder
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
