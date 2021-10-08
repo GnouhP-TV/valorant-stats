@@ -6,7 +6,7 @@ client.commands = new Discord.Collection();
 const mongoose = require('mongoose');
 
 // Connecting to database
-const conn = await mongoose.connect(process.env.MONGO_URI, {
+const conn = mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true
