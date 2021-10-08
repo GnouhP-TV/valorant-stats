@@ -3,7 +3,7 @@ require('dotenv').config()
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 // Connecting to database
 mongoose.connect(process.env.MONGODB_URI, {
